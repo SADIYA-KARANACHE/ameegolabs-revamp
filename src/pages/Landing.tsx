@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import { CursorFollower } from "@/components/CursorFollower";
 import { MagneticButton } from "@/components/MagneticButton";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { FleeingParticles } from "@/components/FleeingParticles";
 import {
   Plane, Smile, Palette, Shield, Zap, Headphones, ShoppingCart, ArrowRight,
   Phone, Mail, MapPin, ChevronDown, Lightbulb, ArrowRightIcon, Mic2, Globe,
