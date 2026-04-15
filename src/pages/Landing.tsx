@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import { CursorFollower } from "@/components/CursorFollower";
 import { MagneticButton } from "@/components/MagneticButton";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { FleeingParticles } from "@/components/FleeingParticles";
 import {
   Plane, Smile, Palette, Shield, Zap, Headphones, ShoppingCart, ArrowRight,
   Phone, Mail, MapPin, ChevronDown, Lightbulb, ArrowRightIcon, Mic2, Globe,
@@ -276,8 +277,10 @@ const Landing = () => {
 
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative min-h-[100vh] flex items-center justify-center pt-16 overflow-hidden">
+        {/* Fleeing particles */}
+        <FleeingParticles />
         {/* Animated grid background */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
           backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }} />
@@ -374,13 +377,15 @@ const Landing = () => {
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {FEATURES.map((f, i) => (
               <RevealOnScroll key={f.title} delay={i * 0.08}>
-                <SpotlightCard className="h-full rounded-xl border border-border bg-card p-7 hover:border-primary/30 transition-colors duration-300">
-                  <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <f.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="text-[15px] font-semibold mb-2">{f.title}</h3>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground">{f.desc}</p>
-                </SpotlightCard>
+                <TiltCard className="h-full">
+                  <SpotlightCard className="h-full rounded-xl border border-border bg-card p-7 hover:border-primary/30 transition-colors duration-300">
+                    <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                      <f.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 className="text-[15px] font-semibold mb-2">{f.title}</h3>
+                    <p className="text-[13px] leading-relaxed text-muted-foreground">{f.desc}</p>
+                  </SpotlightCard>
+                </TiltCard>
               </RevealOnScroll>
             ))}
           </div>
@@ -453,13 +458,15 @@ const Landing = () => {
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {SERVICES.map((s, i) => (
               <RevealOnScroll key={s.title} delay={i * 0.08}>
-                <SpotlightCard className="h-full rounded-xl border border-border bg-background p-7 hover:border-primary/30 transition-colors duration-300">
-                  <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <s.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="text-[15px] font-semibold mb-2">{s.title}</h3>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground">{s.desc}</p>
-                </SpotlightCard>
+                <TiltCard className="h-full">
+                  <SpotlightCard className="h-full rounded-xl border border-border bg-background p-7 hover:border-primary/30 transition-colors duration-300">
+                    <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                      <s.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 className="text-[15px] font-semibold mb-2">{s.title}</h3>
+                    <p className="text-[13px] leading-relaxed text-muted-foreground">{s.desc}</p>
+                  </SpotlightCard>
+                </TiltCard>
               </RevealOnScroll>
             ))}
           </div>
