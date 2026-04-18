@@ -702,6 +702,9 @@ const Landing = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating AI Chatbot */}
+      <AmeegoChatbot />
     </div>
   );
 };
