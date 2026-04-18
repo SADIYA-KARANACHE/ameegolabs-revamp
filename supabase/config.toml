@@ -1,1 +1,4 @@
 project_id = "lvrdguupikcmfniawkyq"
+
+[functions.ameego-chat]
+verify_jwt = false
