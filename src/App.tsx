@@ -8,6 +8,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Auth from "./pages/Auth";
 import Index from "./pages/Index";
+import Wizard from "./pages/Wizard";
 import Dashboard from "./pages/Dashboard";
 import BugCreate from "./pages/BugCreate";
 import BugDetail from "./pages/BugDetail";
@@ -29,6 +30,7 @@ const App = () => (
             <Routes>
               <Route path="/auth" element={<Auth />} />
               <Route path="/" element={<Index />} />
+              <Route path="/wizard" element={<Wizard />} />
               <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/bugs" element={<ProtectedRoute><BugList /></ProtectedRoute>} />
               <Route path="/bugs/new" element={<ProtectedRoute><BugCreate /></ProtectedRoute>} />

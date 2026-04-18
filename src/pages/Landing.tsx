@@ -252,6 +252,14 @@ const Landing = () => {
             <NavItem href="#reviewmagic" label="ReviewMagic" />
             <NavItem href="#clients" label="Clients" />
             <NavItem href="#contact" label="Contact" />
+            <a
+              href="/wizard"
+              data-cursor-hover
+              className="relative text-[13px] font-medium text-primary hover:text-primary transition-colors group"
+            >
+              Wizard Questionnaire
+              <span className="absolute bottom-0 left-0 w-full h-px bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <MagneticButton strength={0.2}>
